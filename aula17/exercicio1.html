@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>
+        Site de Notícias
+    </title>
+</head>
+
+<body>
+    <article>
+        <h1 id="noticia-principal">Agenda Cultural no Fim de Semana </h1>
+        <p>conteudo da noticia principal</p>
+        <section id="secao-comentarios">
+
+        </section>
+    </article>
+    <div id="noticias-relacionadas">
+        <article>
+            <h1>Festival no Parque do Ibirapuera</h1>
+            <p class="paragrafo-noticia">conteudo da noticia1</p>
+        </article>
+        <article>
+            <h1>Evento Gastronômico na Liberdade</h1>
+            <p class="paragrafo-noticia">conteudo da noticia2</p>
+        </article>
+    </div>
+    <footer>
+        <ul>
+            <li>
+                atualização 15/11/2023 11:17
+            </li>
+            <li>
+                atualização 01/11/2023 14:58
+            </li>
+            <li>
+                atualização 13/11/2023 19:25
+            </li>
+        </ul>
+    </footer>
+    <script>
+        const titulo_noticia_principal = document.getElementById('noticia-principal').innerHTML;
+        alert(titulo_noticia_principal);
+        const titulos = document.getElementsByTagName('h1');
+        console.log(titulos)
+        for (let i = 0; i < titulos.length; i++) {
+
+            titulos[i].style.color = 'yellow'
+        }
+        const paragrafos = document.getElementsByClassName('paragrafo-noticia');
+        for (let i = 0; i < paragrafos.length; i++) {
+
+            paragrafos[i].innerHTML = 'Leia a notícia completa';
+
+        }
+
+        const novo_paragrafo = document.createElement('p');
+        novo_paragrafo.innerHTML = 'Deixe seu comentário';
+        document.getElementById('secao-comentarios').appendChild(novo_paragrafo);
+        const ultima_atualizacao = document.querySelector('footer > ul li:last-child');
+        ultima_atualizacao.remove();
+    </script>
+</body>
+
+</html>
